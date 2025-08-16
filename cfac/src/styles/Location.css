@@ -1,0 +1,208 @@
+/* 
+ * Location Component Styles
+ * Creates a full-screen section with large image (65%) and content (35%)
+ * Used to showcase spaces, facilities, or locations
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+.location {
+  min-height: 100vh;
+  display: flex;
+  background-color: #333;
+}
+
+.location-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.location-image-section {
+  flex: 0 0 65%;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.location:hover .location-image {
+  transform: scale(1.02);
+}
+
+.location-content-section {
+  flex: 0 0 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  min-height: 100vh;
+  background-color: inherit;
+}
+
+.location-content {
+  max-width: 400px;
+  width: 100%;
+  color: white;
+}
+
+.location-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 30px 0;
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.2;
+}
+
+.location-description {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 30px 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.location-description p {
+  margin: 0 0 20px 0;
+}
+
+.location-description p:last-child {
+  margin-bottom: 0;
+}
+
+.location-link {
+  color: #4169E1;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+}
+
+.location-link:hover {
+  color: #5a7df5;
+  border-bottom-color: #5a7df5;
+}
+
+/* Scroll animations */
+.scroll-animate-location {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate-location.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.location-title.scroll-animate-location {
+  transition-delay: 0.1s;
+}
+
+.location-description.scroll-animate-location {
+  transition-delay: 0.3s;
+}
+
+.location-link.scroll-animate-location {
+  transition-delay: 0.5s;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .location-image-section {
+    flex: 0 0 60%;
+  }
+  
+  .location-content-section {
+    flex: 0 0 40%;
+    padding: 50px 30px;
+  }
+  
+  .location-title {
+    font-size: 2.5rem;
+  }
+  
+  .location-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .location {
+    min-height: auto;
+  }
+  
+  .location-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .location-image-section {
+    flex: none;
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .location-content-section {
+    flex: none;
+    min-height: auto;
+    padding: 50px 30px;
+    text-align: center;
+  }
+  
+  .location-title {
+    font-size: 2.2rem;
+  }
+  
+  .location-description {
+    font-size: 1rem;
+  }
+  
+  /* Change animation direction for mobile */
+  .scroll-animate-location {
+    transform: translateY(30px);
+  }
+  
+  .scroll-animate-location.animate-in {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-image-section {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .location-content-section {
+    padding: 40px 20px;
+  }
+  
+  .location-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .location-description {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  
+  .location-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Note: Theme variants can be added here if needed in the future */

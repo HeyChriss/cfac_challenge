@@ -1,0 +1,153 @@
+/* 
+ * Instructor Component Styles
+ * Creates individual instructor cards with photos, names, and descriptions
+ * Features grayscale-to-color hover effects and themed color schemes
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+.instructor {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.instructor-image-section {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.instructor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.instructor:hover .instructor-image {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.instructor-info {
+  padding: 20px;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.instructor-info.purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.instructor-info.teal {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.instructor-info.blue {
+  background: linear-gradient(135deg, #4169E1 0%, #1e3a8a 100%);
+}
+
+.instructor-info.pink {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.instructor-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.instructor-title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.instructor-description {
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.instructor-description p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+
+/* Scroll animations */
+.scroll-animate-instructor {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animate-instructor.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.instructor-name.scroll-animate-instructor {
+  transition-delay: 0.1s;
+}
+
+.instructor-description.scroll-animate-instructor {
+  transition-delay: 0.2s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .instructor-image-section {
+    height: 250px;
+  }
+  
+  .instructor-name {
+    font-size: 1.3rem;
+  }
+  
+  .instructor-title {
+    font-size: 0.9rem;
+  }
+  
+  .instructor-description p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructor-image-section {
+    height: 200px;
+  }
+  
+  .instructor-info,
+  .instructor-description {
+    padding: 15px;
+  }
+  
+  .instructor-name {
+    font-size: 1.2rem;
+  }
+  
+  .instructor-title {
+    font-size: 0.85rem;
+  }
+  
+  .instructor-description p {
+    font-size: 0.85rem;
+  }
+}

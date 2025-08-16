@@ -1,0 +1,159 @@
+/* 
+ * Sub Footer Component Styles
+ * Creates a detailed footer with 4-column grid layout
+ * Contains links for Contact, Discover, Resources, and Connect sections
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+.subfooter {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  font-family: 'Roboto Slab', serif;
+  border-top: 1px solid #e9ecef;
+}
+
+.subfooter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+
+.subfooter-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.subfooter-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+}
+
+.subfooter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subfooter-link {
+  color: #4169E1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.subfooter-link:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+/* Contact specific styles */
+.contact-address {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.contact-phone,
+.contact-email {
+  color: #4169E1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-phone:hover,
+.contact-email:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+/* Social icons styles */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4169E1;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-2px);
+}
+
+/* Social media icons use text content for now - could be replaced with icon fonts later */
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .subfooter-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subfooter {
+    padding: 50px 0;
+  }
+  
+  .subfooter-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .subfooter-title {
+    font-size: 0.9rem;
+  }
+  
+  .subfooter-link,
+  .contact-phone,
+  .contact-email,
+  .contact-address {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subfooter {
+    padding: 40px 0;
+  }
+  
+  .subfooter-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .social-icons {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
