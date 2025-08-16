@@ -1,0 +1,98 @@
+/* 
+ * News Bar Component Styles
+ * Creates a continuously scrolling news ticker below the hero section
+ * Uses CSS animations to scroll text from right to left infinitely
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+.news-bar {
+  background: linear-gradient(90deg, #4169E1 0%, #000000 100%);
+  color: white;
+  padding: 15px 0;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Roboto Slab', serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-bar-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.news-content {
+  display: flex;
+  white-space: nowrap; /* Prevents text from wrapping to next line */
+  animation: scroll-left 30s linear infinite; /* Continuous scrolling animation */
+}
+
+.news-item {
+  display: inline-block;
+  padding: 0 50px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Scrolling animation - moves text from right side of screen to left side */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100vw); /* Start from right edge of viewport */
+  }
+  to {
+    transform: translateX(-100vw); /* End at left edge of viewport */
+  }
+}
+
+/* Pause animation on hover */
+.news-bar:hover .news-content {
+  animation-play-state: paused;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .news-bar {
+    padding: 12px 0;
+  }
+  
+  .news-item {
+    font-size: 14px;
+    padding: 0 30px;
+  }
+  
+  .news-content {
+    animation-duration: 25s;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-bar {
+    padding: 10px 0;
+  }
+  
+  .news-item {
+    font-size: 13px;
+    padding: 0 25px;
+  }
+  
+  .news-content {
+    animation-duration: 22s;
+  }
+}
+
+/* Fade edges for smooth scrolling appearance - creates a subtle edge effect */
+.news-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  background: linear-gradient(90deg, 
+    rgba(65, 105, 225, 1) 0%, 
+    rgba(65, 105, 225, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}

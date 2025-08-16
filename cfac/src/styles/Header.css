@@ -1,0 +1,121 @@
+/* 
+ * Header Component Styles
+ * This creates the sticky navigation bar at the top of every page
+ * Uses a blue to black gradient background with the Roboto Slab font
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+.header {
+  background: linear-gradient(90deg, #4169E1 0%, #000000 100%); /* Blue to black gradient */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: sticky; /* Stays at top when scrolling */
+  top: 0;
+  z-index: 1000; /* Makes sure it stays above other content */
+  font-family: 'Roboto Slab', serif;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spreads nav, title, logo across width */
+  max-width: 1300px;
+  margin: 0 auto; /* Centers the header content */
+  padding: 15px 20px;
+  height: 60px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.header-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  flex: 1;
+}
+
+.header-brand {
+  color: white;
+  text-align: right;
+  flex: 1;
+}
+
+.header-title-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-title-link:hover {
+  opacity: 0.8;
+}
+
+.header-brand a {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.header-brand a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  
+  .header-nav,
+  .header-title,
+  .header-brand {
+    flex: none;
+    text-align: center;
+  }
+  
+  .header-nav {
+    gap: 20px;
+  }
+  
+  .nav-link,
+  .header-title {
+    font-size: 14px;
+  }
+  
+  .header-brand {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav {
+    gap: 15px;
+  }
+  
+  .nav-link,
+  .header-title,
+  .header-brand {
+    font-size: 13px;
+  }
+}
